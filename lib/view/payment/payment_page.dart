@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intuc/utils/dynamic_sizing/dynamic_sizing.dart';
+import 'package:intuc/view/event_page/event_page.dart';
 
 class PaymentPage extends StatelessWidget {
   const PaymentPage({super.key});
@@ -10,21 +11,23 @@ class PaymentPage extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 22, 22, 22),
       appBar: AppBar(
         backgroundColor: Colors.white,
-        elevation: 3,
+        shadowColor: Colors.black,
+        elevation: 5,
         title: Text(
           "Contribute My Part",
           style: TextStyle(
-              fontSize: R.rw(19, context), fontWeight: FontWeight.w500),
+              fontSize: R.rw(20, context), fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            ),),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -68,21 +71,31 @@ class PaymentPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                   horizontal: R.rw(60, context),
                 ),
-                child: Container(
-                  height: R.rw(50, context),
-                  decoration: BoxDecoration(
-                    color: const Color(0xffEF831A),
-                    borderRadius: BorderRadius.circular(
-                      R.rw(10, context),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const EventPage(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: R.rw(50, context),
+                    decoration: BoxDecoration(
+                      color: const Color(0xffEF831A),
+                      borderRadius: BorderRadius.circular(
+                        R.rw(10, context),
+                      ),
                     ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Pay Now",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: R.rw(18, context),
-                          fontWeight: FontWeight.w500),
+                    child: Center(
+                      child: Text(
+                        "Pay Now",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: R.rw(18, context),
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                 ),
