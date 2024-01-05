@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intuc/utils/dynamic_sizing/dynamic_sizing.dart';
+import 'package:intuc/view/slogans_page/slogans_page.dart';
 
 class EventPage extends StatelessWidget {
   const EventPage({super.key});
@@ -56,17 +57,27 @@ class EventPage extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   vertical: R.rw(20, context)),
-                              child: Container(
-                                height: R.rw(170, context),
-                                width: R.rw(150, context),
-                                decoration: BoxDecoration(
-                                  // color: Colors.black45,
-                                  image: const DecorationImage(
-                                      image: NetworkImage(
-                                          "https://pbs.twimg.com/media/GCZ3YrUXwAACBCo?format=jpg&name=large"),
-                                      fit: BoxFit.cover),
-                                  borderRadius: BorderRadius.circular(
-                                    R.rw(15, context),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const SlogansPage(),
+                                    ),
+                                  );
+                                },
+                                child: Container(
+                                  height: R.rw(170, context),
+                                  width: R.rw(150, context),
+                                  decoration: BoxDecoration(
+                                    // color: Colors.black45,
+                                    image: const DecorationImage(
+                                        image: NetworkImage(
+                                            "https://pbs.twimg.com/media/GCZ3YrUXwAACBCo?format=jpg&name=large"),
+                                        fit: BoxFit.cover),
+                                    borderRadius: BorderRadius.circular(
+                                      R.rw(15, context),
+                                    ),
                                   ),
                                 ),
                               ),

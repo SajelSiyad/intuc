@@ -115,9 +115,9 @@ class _SignupPageState extends State<SignupPage> {
                           dropdownColor: Colors.black,
                           style: TextStyle(
                               color: Colors.white, fontSize: R.rw(16, context)),
-                          hint: Text(
-                            district,
-                            style: const TextStyle(color: Colors.white70),
+                          hint: const Text(
+                            "Lok Sabha",
+                            style: TextStyle(color: Colors.white70),
                           ),
                           icon: const Icon(Icons.keyboard_arrow_down),
                           items: items.map((String item) {
@@ -150,9 +150,9 @@ class _SignupPageState extends State<SignupPage> {
                           dropdownColor: Colors.black,
                           style: TextStyle(
                               color: Colors.white, fontSize: R.rw(16, context)),
-                          hint: const Text(
-                            "Lok Sabha",
-                            style: TextStyle(color: Colors.white70),
+                          hint: Text(
+                            district,
+                            style: const TextStyle(color: Colors.white70),
                           ),
                           icon: const Icon(Icons.keyboard_arrow_down),
                           items: items.map((String item) {
