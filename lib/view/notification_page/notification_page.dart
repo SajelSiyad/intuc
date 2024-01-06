@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intuc/utils/dynamic_sizing/dynamic_sizing.dart';
+import 'package:intuc/view/contact_Us_page/contact_Us_page.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -40,15 +41,25 @@ class NotificationPage extends StatelessWidget {
                 SizedBox(
                   height: R.rw(10, context),
                 ),
-                Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(R.rw(3, context)),
-                  decoration:
-                      const BoxDecoration(color: Color.fromARGB(20, 0, 0, 0)),
-                  child: const Text(
-                    "Today",
-                    style: TextStyle(
-                        color: Colors.black45, fontWeight: FontWeight.w500),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ContactUsPage(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(R.rw(3, context)),
+                    decoration:
+                        const BoxDecoration(color: Color.fromARGB(20, 0, 0, 0)),
+                    child: const Text(
+                      "Today",
+                      style: TextStyle(
+                          color: Colors.black45, fontWeight: FontWeight.w500),
+                    ),
                   ),
                 ),
                 Padding(
